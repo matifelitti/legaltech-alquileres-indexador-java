@@ -1,0 +1,77 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(15, 30, 54, 0.05);
+    border-top: 5px solid #0f1e36;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    color: #0f1e36;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #c5a880;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #0f1e36;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    background-color: #0f1e36;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #1e3a64;
+}
+
+.footer-caption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 25px;
+    line-height: 1.4;
+}
