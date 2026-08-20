@@ -13,22 +13,17 @@ public class LectorCSVService {
         List<IndicePrecios> listaIndices = new ArrayList<>();
         String linea;
         
-        // BufferedReader lee el archivo línea por línea de forma eficiente
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             
-            // Saltamos la primera línea (el encabezado: "Mes,Valor")
             br.readLine(); 
             
-            // Recorremos el archivo hasta el final
             while ((linea = br.readLine()) != null) {
-                // Separamos los datos por la coma
                 String[] datos = linea.split(",");
                 
                 if (datos.length == 2) {
                     String mes = datos[0].trim();
                     double valor = Double.parseDouble(datos[1].trim()); // Convertimos el texto a número
                     
-                    // Creamos el objeto y lo guardamos en la lista
                     listaIndices.add(new IndicePrecios(mes, valor));
                 }
             }
