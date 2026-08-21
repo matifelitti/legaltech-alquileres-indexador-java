@@ -24,7 +24,7 @@ public class CalculadorService {
             }
         }
 
-        // Validación legal: Si falta algún índice, avisamos al usuario para no calcular mal
+        // Validación: Si falta algún índice, avisamos al usuario para no calcular mal
         if (valorIndiceInicio == 0.0) {
             System.err.println("⚠️ Alerta: No se encontró el índice para el mes de inicio: " + mesInicioContrato);
             return contrato.getMontoInicial();
@@ -37,7 +37,7 @@ public class CalculadorService {
         // 🔥 FÓRMULA MATEMÁTICA POST-DNU: (Monto Inicial * Indice Actual) / Indice Base
         double montoActualizado = (contrato.getMontoInicial() * valorIndiceActualizacion) / valorIndiceInicio;
         
-        // Redondeamos a dos decimales para que parezca una liquidación real de caja
+        // Redondeamos a dos decimales
         return Math.round(montoActualizado * 100.0) / 100.0;
     }
 }

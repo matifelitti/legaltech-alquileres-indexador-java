@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>📜 Dictamen de Liquidación - LegalTech</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/resultado.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dictamen de Liquidación</h1>
+        <div class="subtitle">📜 CONTRATO DE LOCACIÓN COMERCIAL (POST-DNU)</div>
+        
+        <div class="result-box">
+            <p><strong>Locatario (Inquilino):</strong> <span th:text="${locatario}"></span></p>
+            <p><strong>Locador (Propietario):</strong> <span th:text="${locador}"></span></p>
+            <p><strong>Mes de Inicio (Base):</strong> <span th:text="${mesInicio}"></span></p>
+            <p><strong>Monto Base Inicial:</strong> $<span th:text="${montoInicial}"></span></p>
+            <p><strong>Período de Ajuste Aplicado:</strong> <span th:text="${mesAjuste}"></span></p>
+            
+            <div class="monto-destacado">
+                💰 NUEVO CANON LOCATIVO: $<span th:text="${montoActualizado}"></span>
+            </div>
+        </div>
+
+        <a href="/" class="btn-volver">↩️ Calcular Nueva Liquidación</a>
+
+        <div class="footer-caption">
+            Liquidación emitida bajo los parámetros del DNU N° 70/2023.
+        </div>
+    </div>
+</body>
+</html>
