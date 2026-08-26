@@ -6,16 +6,23 @@
     border-radius: 4px;
 }
 
+.result-box p {
+    font-size: 1rem;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
 .monto-destacado {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #0f1e36;
     font-weight: 700;
     text-align: center;
-    margin: 15px 0;
-    padding: 10px;
+    margin: 20px 0;
+    padding: 14px 10px;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 4px;
+    word-break: break-all;
 }
 
 .btn-volver {
@@ -25,9 +32,9 @@
     width: 100%;
     background-color: #64748b;
     color: #ffffff;
-    padding: 12px;
+    padding: 14px;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     box-sizing: border-box;
     transition: background 0.2s;
@@ -35,4 +42,20 @@
 
 .btn-volver:hover {
     background-color: #475569;
+}
+
+@media (max-width: 480px) {
+    .result-box {
+        padding: 15px 10px;
+    }
+    .result-box p {
+        font-size: 0.9rem;
+    }
+    .monto-destacado {
+        font-size: 1.15rem;
+        padding: 12px 5px;
+    }
+    .btn-volver {
+        font-size: 0.95rem;
+    }
 }

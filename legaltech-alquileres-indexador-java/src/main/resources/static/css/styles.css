@@ -6,6 +6,9 @@ body {
     padding: 40px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .container {
@@ -16,6 +19,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(15, 30, 54, 0.05);
     border-top: 5px solid #0f1e36;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -32,6 +36,7 @@ h1 {
     font-weight: 600;
     margin-bottom: 25px;
     letter-spacing: 0.5px;
+    font-size: 0.95rem;
 }
 
 label {
@@ -39,16 +44,18 @@ label {
     margin-bottom: 8px;
     font-weight: 600;
     color: #0f1e36;
+    font-size: 0.95rem;
 }
 
 input, select {
     width: 100%;
-    padding: 10px;
+    padding: 12px 10px;
     margin-bottom: 20px;
     border: 1px solid #e2e8f0;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1rem;
+    background-color: #ffffff;
 }
 
 button {
@@ -56,12 +63,13 @@ button {
     background-color: #0f1e36;
     color: #ffffff;
     border: none;
-    padding: 12px;
+    padding: 14px;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
+    -webkit-appearance: none;
 }
 
 button:hover {
@@ -74,4 +82,22 @@ button:hover {
     color: #64748b;
     margin-top: 25px;
     line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    .container {
+        padding: 20px 15px;
+    }
+    h1 {
+        font-size: 1.45rem;
+    }
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    input, select, button {
+        font-size: 0.95rem;
+    }
 }
