@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>📊 Panel Histórico - LegalTech</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+        <link rel="stylesheet" th:href="@{/css/historial.css}">
+    </head>
+    <body>
+        <div class="container-wide">
+            <h1>Registro Histórico de Liquidaciones</h1>
+            <div class="subtitle">📊 AUDITORÍA DE CONSULTAS CONTRATUALES (POST-DNU)</div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha/Hora</th>
+                            <th>Locatario</th>
+                            <th>Locador</th>
+                            <th>Mes Inicio</th>
+                            <th>Monto Base</th>
+                            <th>Mes Ajuste</th>
+                            <th>Monto Actualizado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Si la lista tiene elementos, los recorre fila por fila -->
+                        <tr th:each="fila : ${historial}">
+                            <td th:text="${fila[0]}"></td>
+                            <td th:text="${fila[1]}"></td>
+                            <td th:text="${fila[2]}"></td>
+                            <td th:text="${fila[3]}"></td>
+                            <td>$<span th:text="${fila[4]}"></span></td>
+                            <td th:text="${fila[5]}"></td>
+                            <td class="monto-final">$<span th:text="${fila[6]}"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Si no hay datos guardados todavía -->
+                <div th:if="${#lists.isEmpty(historial)}" class="vacio-msg">
+                    Navegación: No se registran liquidaciones en el archivo de auditoría local.
+                </div>
+            </div>
+
+            <a href="/" class="btn-panel">↩️ Volver al Calculador</a>
+        </div>
+    </body>
+</html>

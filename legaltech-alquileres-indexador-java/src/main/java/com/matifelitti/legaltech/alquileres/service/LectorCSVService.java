@@ -37,4 +37,27 @@ public class LectorCSVService {
 
         return listaIndices;
     }
+    
+    public List<String[]> cargarHistorial(String rutaArchivo) {
+    List<String[]> historial = new java.util.ArrayList<>();
+    java.io.File archivo = new java.io.File(rutaArchivo);
+    
+    if (!archivo.exists()) {
+        return historial;
+    }
+
+    try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(archivo))) {
+        br.readLine();
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            String[] datos = linea.split(",");
+            if (datos.length == 7) {
+                historial.add(datos);
+            }
+        }
+    } catch (java.io.IOException e) {
+        System.err.println("❌ Error al leer el historial CSV: " + e.getMessage());
+    }
+    return historial;
+}
 }

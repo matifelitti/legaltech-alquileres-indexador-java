@@ -80,4 +80,14 @@ public class IndexadorController {
         // Redirigimos a la plantilla resultado.html
         return "resultado";
     }
+    
+    @GetMapping("/historial")
+    public String mostrarHistorial(Model model) {
+    // Lee el historial guardado
+    List<String[]> listaHistorial = lectorCSVService.cargarHistorial("data/historial_liquidaciones.csv");
+    
+    // Se envía la lista al HTML
+    model.addAttribute("historial", listaHistorial);
+    return "historial";
+}
 }
